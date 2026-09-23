@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>problem 1: Product Landing Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- skip Link for Keyboard Users -->
+     <!-- lights up yellow when tabbed to -->
+  <a href="#main" class="skip-link">Skip to content</a> 
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="header__logo">product landing page </a>
+      <nav class="nav" aria-label="Main">
+        <ul class="nav__list">
+          <li><a href="#features" class="nav__link">Features</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero Section -->
+    <section class="hero container">
+      <h1 class="hero__title">Simple, Reliable Telemetry</h1>
+      <p class="hero__desc">Real-time metrics and logs for high-traffic apps.</p>
+      <a href="#contact" class="btn">Get Started</a>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features container" aria-labelledby="features-title">
+      <h2 id="features-title">Features</h2>
+      <div class="features__grid">
+        <article class="card">
+          <h3>Fast Ingestion</h3>
+          <p>Process metrics at the edge with zero noticeable overhead.</p>
+        </article>
+        <article class="card">
+          <h3>Smart Alerts</h3>
+          <p>Get notified about real incidents, not background noise.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact container" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact Us</h2>
+      
+      <form class="form" action="#" method="POST">
+        <!-- Name Field -->
+        <div class="form__group">
+          <label for="name" class="form__label">
+            Name <span aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            class="form__input" 
+            required 
+            minlength="2"
+            autocomplete="name"
+            aria-describedby="name-hint"
+          >
+          <p id="name-hint" class="form__hint">Enter your full name.</p>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form__group">
+          <label for="email" class="form__label">
+            Email <span aria-hidden="true">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            class="form__input" 
+            required 
+            autocomplete="email"
+            aria-describedby="email-hint"
+          >
+          <p id="email-hint" class="form__hint">We will never share your email.</p>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 rama's product. all rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
