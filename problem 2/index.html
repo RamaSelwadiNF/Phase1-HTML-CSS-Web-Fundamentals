@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="overlay" id="overlay"></div>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <h2>Console</h2>
+      <nav>
+        <a href="#" class="nav-item active">Overview</a>
+        <a href="#" class="nav-item">Analytics</a>
+        <a href="#" class="nav-item">Settings</a>
+      </nav>
+    </aside>
+
+    <header class="header">
+      <button class="menu-btn" id="menuToggle">Menu</button>
+      <span>Dashboard</span>
+      <div class="profile-menu">
+        <button class="btn" id="dropToggle">Account</button>
+        <div class="dropdown" id="dropdown">
+          <a href="#">Profile</a>
+          <a href="#" id="openModalBtn">Open Modal</a>
+          <a href="#">Log out</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <h2>Metrics</h2>
+      <div class="stats-grid">
+        <div class="card-wrapper">
+          <div class="card">
+            <div>
+              <p class="card-label">Total Views</p>
+              <div class="card-val">24.8k</div>
+            </div>
+            <button class="btn btn-sm">View</button>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card">
+            <div>
+              <p class="card-label">Active Users</p>
+              <div class="card-val">1,240</div>
+            </div>
+            <button class="btn btn-sm">View</button>
+          </div>
+        </div>
+        <div class="card-wrapper">
+          <div class="card">
+            <div>
+              <p class="card-label">Conversion Rate</p>
+              <div class="card-val">4.6%</div>
+            </div>
+            <button class="btn btn-sm">View</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal">
+      <h3>System Notice</h3>
+      <p class="modal-text">Changes have been saved to local workspace.</p>
+      <div class="modal-actions">
+        <button class="btn" id="closeModalBtn">Dismiss</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('overlay');
+    const menuToggle = document.getElementById('menuToggle');
+    const dropToggle = document.getElementById('dropToggle');
+    const dropdown = document.getElementById('dropdown');
+    const modal = document.getElementById('modal');
+    const openModalBtn = document.getElementById('openModalBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+
+    function toggleMenu() {
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('active');
+    }
+
+    menuToggle.onclick = toggleMenu;
+    overlay.onclick = toggleMenu;
+
+    dropToggle.onclick = (e) => {
+      e.stopPropagation();
+      dropdown.classList.toggle('show');
+    };
+
+    window.onclick = () => {
+      if (dropdown.classList.contains('show')) dropdown.classList.remove('show');
+    };
+
+    openModalBtn.onclick = (e) => {
+      e.preventDefault();
+      modal.classList.add('open');
+      dropdown.classList.remove('show');
+    };
+
+    closeModalBtn.onclick = () => modal.classList.remove('open');
+    modal.onclick = (e) => {
+      if (e.target === modal) modal.classList.remove('open');
+    };
+  </script>
+</body>
+</html>
