@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Media Showcase</title>
+  <link rel="preload" href="style.css" as="style">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="pill-badge">Showcase</span>
+      <h1 class="hero-title">Visual Motion & Media</h1>
+      <p class="hero-desc">High-performance CSS transforms, responsive media pipelines, and print adaptability.</p>
+      <div class="hero-cta">
+        <a href="#gallery" class="btn btn-interactive">Explore Works</a>
+        <button class="btn btn-ghost" onclick="window.print()">Print Overview</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="gallery">
+    <section class="gallery-grid">
+
+      <article class="media-card">
+        <div class="media-wrapper">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80 600w" type="image/avif" sizes="(min-width: 768px) 50vw, 100vw">
+            <source srcset="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80 600w" type="image/webp" sizes="(min-width: 768px) 50vw, 100vw">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Abstract fluid composition" loading="lazy" decoding="async" width="600" height="400">
+          </picture>
+          <div class="media-badge">Dynamic Art</div>
+        </div>
+        <div class="card-info">
+          <h3>Neural Dynamics</h3>
+          <p>Layered keyframe gradients and responsive aspect handling.</p>
+          <div class="tag-list">
+            <span class="tag">AVIF</span>
+            <span class="tag">Transform3D</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="media-card">
+        <div class="media-wrapper">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80 600w" type="image/avif" sizes="(min-width: 768px) 50vw, 100vw">
+            <source srcset="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80 1200w, https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80 600w" type="image/webp" sizes="(min-width: 768px) 50vw, 100vw">
+            <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Retro electronic interface" loading="lazy" decoding="async" width="600" height="400">
+          </picture>
+          <div class="media-badge">Hardware UI</div>
+        </div>
+        <div class="card-info">
+          <h3>Synthesizer Architecture</h3>
+          <p>Micro-interactions with GPU-accelerated elevation states.</p>
+          <div class="tag-list">
+            <span class="tag">WebP</span>
+            <span class="tag">Transitions</span>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="print-meta">
+      <hr>
+      <p>Portfolio Catalog &mdash; Rendered from local repository build.</p>
+    </footer>
+  </main>
+
+</body>
+</html>
