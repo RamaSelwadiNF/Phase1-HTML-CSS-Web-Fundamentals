@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="nav-brand">System UI</div>
+    <div class="nav-actions">
+      <button class="btn btn-outline" id="themeToggle">Theme</button>
+      <a href="#modal-demo" class="btn btn-primary">Preview Modal</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section">
+      <div class="section-header">
+        <h1>Design System & Primitives</h1>
+        <p class="text-muted">A fluid, token-based CSS component system with dark mode.</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-header">
+            <h3>Buttons & Badges</h3>
+            <span class="badge badge-accent">Tokens</span>
+          </div>
+          <div class="card-body">
+            <div class="flex-row">
+              <button class="btn btn-primary">Primary</button>
+              <button class="btn btn-secondary">Secondary</button>
+              <button class="btn btn-outline">Outline</button>
+            </div>
+            <div class="flex-row">
+              <span class="badge badge-primary">Primary</span>
+              <span class="badge badge-success">Success</span>
+              <span class="badge badge-warning">Warning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>CSS Tooltips</h3>
+            <span class="badge badge-secondary">Pure CSS</span>
+          </div>
+          <div class="card-body">
+            <p class="text-muted">Hover over the targets below:</p>
+            <div class="flex-row">
+              <span class="tooltip" data-tooltip="Standard action tooltip">
+                <button class="btn btn-outline">Hover Me</button>
+              </span>
+              <span class="tooltip" data-tooltip="Theme uses custom tokens">
+                <span class="badge badge-accent">Token Details</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h3>Fluid Typography</h3>
+            <span class="badge badge-accent">clamp()</span>
+          </div>
+          <div class="card-body">
+            <h2>Dynamic Heading</h2>
+            <p>Body text and paddings adapt dynamically across viewports using fluid math functions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-target" id="modal-demo">
+    <div class="modal-box">
+      <div class="card-header">
+        <h3>System Dialog</h3>
+        <a href="#" class="modal-close">&times;</a>
+      </div>
+      <p class="text-muted" style="margin: var(--space-md) 0 var(--space-lg);">
+        This modal functions entirely via pure CSS targeting and leverages system elevation tokens.
+      </p>
+      <div class="flex-row" style="justify-content: flex-end;">
+        <a href="#" class="btn btn-secondary">Cancel</a>
+        <a href="#" class="btn btn-primary">Confirm</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle.onclick = () => {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    };
+  </script>
+</body>
+</html>
